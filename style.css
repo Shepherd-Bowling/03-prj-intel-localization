@@ -1,0 +1,434 @@
+/* ------------------------------
+   Base styles / Intel palette
+------------------------------ */
+:root {
+  --intel-blue: #0068b5;
+  --intel-blue-dark: #003c71;
+  --intel-sky: #00c7fd;
+  --intel-light: #f3f8fb;
+  --ink: #1f2933;
+  --muted: #5b6770;
+  --white: #ffffff;
+  --card-border: #d9e5ec;
+  --shadow: 0 14px 34px rgba(0, 60, 113, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--intel-light);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ------------------------------
+   Hero
+------------------------------ */
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  padding: 4.5rem clamp(1.5rem, 6vw, 6rem);
+  color: var(--white);
+  background:
+    radial-gradient(circle at 85% 20%, rgba(0, 199, 253, 0.42), transparent 28%),
+    linear-gradient(120deg, var(--intel-blue-dark) 0%, var(--intel-blue) 62%, #0085c8 100%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  bottom: -210px;
+  width: 520px;
+  height: 520px;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 55px rgba(255, 255, 255, 0.04),
+    0 0 0 110px rgba(255, 255, 255, 0.025);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(760px, 100%);
+}
+
+.intel-logo {
+  width: clamp(120px, 16vw, 190px);
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+.eyebrow,
+.section-label {
+  margin: 0 0 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  color: #c8f3ff;
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(2.6rem, 6vw, 5.3rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.hero-description {
+  max-width: 660px;
+  margin: 1.5rem 0 0;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ------------------------------
+   Timeline heading
+------------------------------ */
+main {
+  padding: 4rem 0 4.5rem;
+}
+
+.timeline-heading {
+  width: min(1200px, calc(100% - 3rem));
+  margin: 0 auto 1.75rem;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.section-label {
+  color: var(--intel-blue);
+}
+
+.timeline-heading h2 {
+  max-width: 680px;
+  margin: 0;
+  color: var(--intel-blue-dark);
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  line-height: 1.15;
+}
+
+.timeline-instruction {
+  margin: 0;
+  max-width: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* ------------------------------
+   Desktop timeline
+------------------------------ */
+.timeline {
+  position: relative;
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 1.2rem max(1.5rem, calc((100vw - 1200px) / 2)) 2.2rem;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: max(1.5rem, calc((100vw - 1200px) / 2));
+  scroll-behavior: smooth;
+  scrollbar-color: var(--intel-blue) #dfeaf0;
+  scrollbar-width: thin;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0.45rem;
+  left: 0;
+  right: auto;
+  width: calc(2790px + 10rem + max(3rem, calc(100vw - 1200px)));
+  height: 3px;
+  background: linear-gradient(90deg, var(--intel-sky), var(--intel-blue));
+}
+
+.timeline::-webkit-scrollbar {
+  height: 10px;
+}
+
+.timeline::-webkit-scrollbar-track {
+  background: #dfeaf0;
+  border-radius: 999px;
+}
+
+.timeline::-webkit-scrollbar-thumb {
+  background: var(--intel-blue);
+  border-radius: 999px;
+}
+
+.milestone-card {
+  position: relative;
+  flex: 0 0 310px;
+  min-height: 405px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  border: 1px solid var(--card-border);
+  border-top: 5px solid var(--intel-sky);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 0 6px 18px rgba(0, 60, 113, 0.08);
+  outline: none;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.milestone-card::before {
+  content: "";
+  position: absolute;
+  top: -1.84rem;
+  left: 1.45rem;
+  z-index: 2;
+  width: 14px;
+  height: 14px;
+  border: 4px solid var(--white);
+  border-radius: 50%;
+  background: var(--intel-blue);
+  box-shadow: 0 0 0 2px var(--intel-blue);
+}
+
+.milestone-card:hover,
+.milestone-card:focus-visible,
+.milestone-card:focus-within {
+  transform: translateY(-8px) scale(1.01);
+  border-color: #a8d8eb;
+  box-shadow: 0 18px 38px rgba(0, 60, 113, 0.16);
+}
+
+.milestone-card:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0, 199, 253, 0.25), var(--shadow);
+}
+
+.milestone-image,
+.milestone-visual {
+  width: 100%;
+  height: 155px;
+}
+
+.milestone-image {
+  object-fit: cover;
+  transition: transform 360ms ease;
+}
+
+.milestone-card:hover .milestone-image,
+.milestone-card:focus-visible .milestone-image,
+.milestone-card:focus-within .milestone-image {
+  transform: scale(1.04);
+}
+
+.milestone-visual {
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08) 25%, transparent 25%) 0 0 / 22px 22px,
+    linear-gradient(315deg, rgba(255, 255, 255, 0.08) 25%, transparent 25%) 0 0 / 22px 22px,
+    linear-gradient(135deg, var(--intel-blue-dark), var(--intel-blue));
+}
+
+.milestone-visual span {
+  color: var(--white);
+  font-size: 2.35rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.milestone-content {
+  padding: 1.25rem 1.35rem 1.45rem;
+}
+
+.year {
+  display: inline-block;
+  margin: 0 0 0.45rem;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  color: var(--intel-blue-dark);
+  background: #dff7ff;
+  font-size: 0.83rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.milestone-card h3 {
+  margin: 0;
+  color: var(--intel-blue-dark);
+  font-size: 1.3rem;
+  line-height: 1.25;
+}
+
+.milestone-details {
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+/* Hover reveal is limited to devices that actually support hover.
+   Touch/mobile users always see the details. */
+@media (hover: hover) and (pointer: fine) and (min-width: 769px) {
+  .milestone-details {
+    max-height: 0;
+    margin-top: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(8px);
+    transition:
+      max-height 320ms ease,
+      margin-top 250ms ease,
+      opacity 240ms ease,
+      transform 240ms ease;
+  }
+
+  .milestone-card:hover .milestone-details,
+  .milestone-card:focus-visible .milestone-details,
+  .milestone-card:focus-within .milestone-details {
+    max-height: 220px;
+    margin-top: 0.85rem;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------------------
+   Mobile / tablet layout
+------------------------------ */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 390px;
+    padding: 3.25rem 1.35rem;
+  }
+
+  .intel-logo {
+    margin-bottom: 1.5rem;
+  }
+
+  main {
+    padding-top: 3rem;
+  }
+
+  .timeline-heading {
+    width: min(100% - 2.5rem, 640px);
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .timeline-instruction {
+    text-align: left;
+  }
+
+  .timeline {
+    width: min(100% - 2.5rem, 640px);
+    margin: 0 auto;
+    padding: 1.25rem 0 0;
+    overflow: visible;
+    flex-direction: column;
+    gap: 1.25rem;
+    scroll-snap-type: none;
+  }
+
+  .timeline::before {
+    top: 0;
+    bottom: 0;
+    left: 11px;
+    right: auto;
+    width: 3px;
+    height: auto;
+    background: linear-gradient(180deg, var(--intel-sky), var(--intel-blue));
+  }
+
+  .milestone-card {
+    flex: 1 1 auto;
+    min-height: 0;
+    margin-left: 2rem;
+  }
+
+  .milestone-card::before {
+    top: 1.35rem;
+    left: -2.57rem;
+  }
+
+  .milestone-card:hover,
+  .milestone-card:focus-visible,
+  .milestone-card:focus-within {
+    transform: translateY(-3px);
+  }
+
+  .milestone-image,
+  .milestone-visual {
+    height: 190px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: clamp(2.35rem, 13vw, 3.4rem);
+  }
+
+  .timeline-heading,
+  .timeline {
+    width: calc(100% - 2rem);
+  }
+
+  .milestone-card {
+    margin-left: 1.65rem;
+  }
+
+  .milestone-card::before {
+    left: -2.22rem;
+  }
+
+  .milestone-image,
+  .milestone-visual {
+    height: 165px;
+  }
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+footer {
+  padding: 1.4rem 1rem;
+  color: rgba(255, 255, 255, 0.82);
+  background: var(--intel-blue-dark);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+}
