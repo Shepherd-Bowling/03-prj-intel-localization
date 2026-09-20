@@ -4,6 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+    rel="stylesheet"
+    integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -162,10 +172,191 @@
         </div>
       </article>
     </section>
+
+    <!-- Responsive three-column section with right-to-left support -->
+    <section class="container py-5" aria-labelledby="sustainability-topics-heading">
+      <div class="text-center mb-4">
+        <p class="section-label">Explore more</p>
+        <h2 id="sustainability-topics-heading">Building a more sustainable future</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <article class="h-100 p-4 border rounded text-center">
+            <i class="bi bi-globe2 fs-1 text-primary" aria-hidden="true"></i>
+            <h3 class="h4 mt-3">Climate Action</h3>
+            <p>Learn how Intel is working to reduce emissions and advance climate solutions.</p>
+            <a class="btn btn-outline-primary" href="#climate-action">Learn More</a>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <article class="h-100 p-4 border rounded text-center">
+            <i class="bi bi-droplet-half fs-1 text-primary" aria-hidden="true"></i>
+            <h3 class="h4 mt-3">Water Stewardship</h3>
+            <p>Discover initiatives that help conserve water across Intel operations.</p>
+            <a class="btn btn-outline-primary" href="#water-stewardship">Learn More</a>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <article class="h-100 p-4 border rounded text-center">
+            <i class="bi bi-recycle fs-1 text-primary" aria-hidden="true"></i>
+            <h3 class="h4 mt-3">Waste Reduction</h3>
+            <p>See how Intel is designing more efficient processes and reducing waste.</p>
+            <a class="btn btn-outline-primary" href="#waste-reduction">Learn More</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expandable sustainability questions -->
+    <section class="container py-5" aria-labelledby="faq-heading">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+          <h2 id="faq-heading" class="mb-4">Sustainability questions</h2>
+
+          <div class="accordion" id="sustainabilityAccordion">
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#climateAnswer"
+                  aria-expanded="true"
+                  aria-controls="climateAnswer"
+                >
+                  How is Intel addressing climate change?
+                </button>
+              </h3>
+              <div id="climateAnswer" class="accordion-collapse collapse show" data-bs-parent="#sustainabilityAccordion">
+                <div class="accordion-body">
+                  Intel is reducing operational emissions, expanding renewable electricity, and working toward net-zero greenhouse gas emissions.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#waterAnswer"
+                  aria-expanded="false"
+                  aria-controls="waterAnswer"
+                >
+                  What is water stewardship?
+                </button>
+              </h3>
+              <div id="waterAnswer" class="accordion-collapse collapse" data-bs-parent="#sustainabilityAccordion">
+                <div class="accordion-body">
+                  Water stewardship includes conserving water, improving reuse, and supporting responsible water management in local communities.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#wasteAnswer"
+                  aria-expanded="false"
+                  aria-controls="wasteAnswer"
+                >
+                  How does Intel reduce waste?
+                </button>
+              </h3>
+              <div id="wasteAnswer" class="accordion-collapse collapse" data-bs-parent="#sustainabilityAccordion">
+                <div class="accordion-body">
+                  Intel reduces waste through reuse, recycling, efficient manufacturing processes, and responsible materials management.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sustainability newsletter subscription form -->
+    <section class="container py-5" aria-labelledby="newsletter-heading">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+          <div class="p-4 p-md-5 border rounded bg-white text-center">
+            <h2 id="newsletter-heading">Stay informed about sustainability</h2>
+            <p>Subscribe to Intel's sustainability newsletter for the latest updates.</p>
+
+            <form action="#" method="post">
+              <div class="mb-3 text-start">
+                <label class="form-label" for="newsletter-email">Email address</label>
+                <input
+                  class="form-control"
+                  type="email"
+                  id="newsletter-email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>Intel Sustainability Journey</p>
+  <footer class="py-4">
+    <div class="container">
+      <div class="row align-items-center gy-3">
+        <div class="col-12 col-md-6">
+          <p class="mb-0">&copy; 2026 Intel Corporation. Intel Sustainability Journey.</p>
+        </div>
+        <nav class="col-12 col-md-6" aria-label="Footer navigation">
+          <ul class="list-inline mb-0 text-md-end">
+            <li class="list-inline-item"><a class="link-light" href="#privacy-policy">Privacy Policy</a></li>
+            <li class="list-inline-item"><a class="link-light" href="#terms-of-use">Terms of Use</a></li>
+            <li class="list-inline-item"><a class="link-light" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </footer>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+    // These language codes use right-to-left text direction.
+    const rtlLanguages = ["ar", "dv", "fa", "he", "ku", "ps", "sd", "ur", "yi"];
+
+    // Update the page direction whenever the document language changes.
+    function updatePageDirection() {
+      const htmlLanguage = document.documentElement.getAttribute("lang");
+      const bodyLanguage = document.body.getAttribute("lang");
+      const language = (htmlLanguage || bodyLanguage || "en").toLowerCase();
+      const languageCode = language.split("-")[0].split("_")[0];
+      const googleTranslateIsRtl =
+        document.documentElement.classList.contains("translated-rtl") ||
+        document.body.classList.contains("translated-rtl");
+      const direction = rtlLanguages.includes(languageCode) || googleTranslateIsRtl ? "rtl" : "ltr";
+
+      document.documentElement.setAttribute("dir", direction);
+    }
+
+    updatePageDirection();
+
+    // Translation tools can change language or direction classes after page load.
+    const languageObserver = new MutationObserver(updatePageDirection);
+    languageObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["lang", "class"] });
+    languageObserver.observe(document.body, { attributes: true, attributeFilter: ["lang", "class"] });
+  </script>
 </body>
 </html>
